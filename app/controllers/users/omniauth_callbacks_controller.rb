@@ -10,7 +10,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
-
   # def google
   #   user = User.find_for_google_oauth(request.env['omniauth.auth'])
 
