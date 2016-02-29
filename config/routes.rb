@@ -1,17 +1,4 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-
-  get 'posts/show'
-
-  get 'posts/new'
-
-  get 'posts/create'
-
-  get 'posts/edit'
-
-  get 'posts/update'
-
-  get 'posts/destroy'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'home', to: 'pages#home'
@@ -21,6 +8,8 @@ Rails.application.routes.draw do
   get 'formation', to: 'pages#formation'
 
   root to: 'pages#home'
+
+  resources :posts
 
 
   # The priority is based upon order of creation: first created -> highest priority.
