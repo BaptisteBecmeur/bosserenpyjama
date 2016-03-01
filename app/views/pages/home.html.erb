@@ -30,13 +30,14 @@
   <div class="coverhome-filter-one">
     <div class="container-fluid">
       <div class="row">
-        <h1>RECEVEZ MES DERNIERES NEWS </h1>
         <div class="col-xs-12 col-sm-12 col-md-12">
-          <ul class="list-unstyled list-inline">
-            <li class="training-section">
-              <%= link_to "Je m'inscris à la Dreamsletter", "#", class:'subscribe-button subscribe-democlass', target: '_blank' %>
-            </li>
-          </ul>
+          <h1>RECEVEZ MES DERNIERES NEWS</h1>
+            <%= link_to about_path do %>
+            <div class="btn btn-default btn-mid">
+              <h5>Click click click</h5>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -47,9 +48,9 @@
   <div class="coverhome-filter-one">
     <div class="container-fluid">
       <div class="row">
-
           <div class="col-xs-12 col-sm-12 col-md-12">
-
+            <h1>Voici une sélection de sites </h1>
+              <h2>Qui va vraiment vous aider !</h2>
               <div class="training-section">
                 <%= link_to "En savoir plus", "https://synestasia.typeform.com/to/jwIhSA", class:'subscribe-button subscribe-training', target: '_blank' %>
               </div>
