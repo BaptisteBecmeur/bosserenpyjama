@@ -21,6 +21,8 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'cloudinary'
 
+gem 'pg_search'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
