@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'legal', to: 'pages#legal'
   get 'contact', to: 'pages#contact'
   get 'formation', to: 'pages#formation'
+  get 'start', to: 'pages#start'
 
   root to: 'pages#home'
 
