@@ -9,19 +9,13 @@
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
           <div class="form-inputs">
-            <div class="margin-place text-center">
-              <%= f.input :email, label: 'Email', required: true, autofocus: true %>
-            </div>
-            <div class="margin-place text-center">
-              <%= f.input :password, label: 'Mot de passe', required: true, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-            </div>
-            <div class="margin-place text-center">
-              <%= f.input :password_confirmation, label: 'Confirmation du mot de passe', required: true %>
-            </div>
+            <%= f.input :email, label: 'Email', required: true, autofocus: true %>
+            <%= f.input :password, label: 'Mot de passe', required: true, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, label: 'Confirmation du mot de passe', required: true %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn login-btn btn-default" %>
+            <%= f.button :submit, "Sign up", class: "btn login-btn" %>
           </div>
           <% end %>
           <%= render "devise/shared/links" %>
@@ -30,5 +24,4 @@
     </div>
   </div>
 </div>
-
 
