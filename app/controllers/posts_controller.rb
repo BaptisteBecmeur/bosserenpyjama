@@ -4,6 +4,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if params[:search] and not params[:search][:query].blank?
+      @posts = @posts.search params[:search][:query]
+    end
   end
 
   def show
