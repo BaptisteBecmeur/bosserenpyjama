@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
   validates :tag, inclusion: { in: Post::TAGS, allow_nil: false }
   validates :user_id, presence: true
   validates :content, presence: true
+  mount_uploader :cover, ImageUploader
 end
