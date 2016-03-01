@@ -1,2 +1,71 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="coverhome">
+  <div class="coverhome-filter">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="separator">
+            <h1>
+              Crééz votre site web
+            </h1>
+          </div>
+          <ul class="list-unstyled list-inline">
+            <li>
+              <%= link_to about_path do %>
+              <div class="btn btn-default btn-top">
+                <h5>Je commence</h5>
+              </div>
+              <% end %>
+            </li>
+          </ul>
+          <div class="search-form">
+              <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
+              <%= f.input :query, label: false, placeholder: "Entrez un titre, une ville..." %>
+              <%= f.submit "Rechercher",  class: "btn btn-success" %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class=" cover-slide-two ">
+  <div class="coverhome-filter-one">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <h1>RECEVEZ MES DERNIERES NEWS</h1>
+            <%= link_to about_path do %>
+            <div class="btn btn-default btn-mid">
+              <h5>Click click click</h5>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cover-slide-three">
+  <div class="coverhome-filter-one">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <h1>Une sélection de sites </h1>
+              <h2>Qui vont vraiment vous aider !</h2>
+              <div class="training-section">
+                <%= link_to "En savoir plus", "https://synestasia.typeform.com/to/jwIhSA", class:'subscribe-button subscribe-training', target: '_blank' %>
+              </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

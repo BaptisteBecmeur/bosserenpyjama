@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get 'pages/home'
-
-  get 'pages/about'
-
-  get 'pages/legal'
-
-  get 'pages/contact'
-
-  get 'pages/formation'
+  get 'home', to: 'pages#home'
+  get 'about', to: 'pages#about'
+  get 'legal', to: 'pages#legal'
+  get 'contact', to: 'pages#contact'
+  get 'formation', to: 'pages#formation'
+  get 'start', to: 'pages#start'
 
   root to: 'pages#home'
+
+  resources :posts
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -13,4 +13,7 @@ class PagesController < ApplicationController
 
   def formation
   end
+
+  def start
+  end
 end
