@@ -22,6 +22,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 
 gem 'pg_search'
+gem 'gibbon'
 
 group :development, :test do
   gem 'binding_of_caller'
