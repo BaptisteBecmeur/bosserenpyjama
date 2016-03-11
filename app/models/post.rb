@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
-  has_many :categories
+  has_many :categories, dependent: :destroy
 
   TAGS = ["Design", "Mode", "Tendance", "Life-Style", "Tradition", "Gastronomie", "Insolite", "Technologie"]
 
@@ -12,6 +12,9 @@ class Post < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search,
-    against: [ :title, :content, :tag ]
+    against: [ :title, :content, :tag ],
+    associated_against: {
+      categories: [:name]
+    }
 
 end
