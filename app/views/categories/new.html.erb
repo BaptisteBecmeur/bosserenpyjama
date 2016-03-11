@@ -4,7 +4,7 @@
       <h1 class="text-center">Sélection de la catégorie</h1>
       <%= simple_form_for [@post, @category] do |f| %>
         <%= f.error_notification %>
-        <%= f.input :name, label: "Nom de la catégorie",collection: Category::CATS, selected: Category::CATS.first %>
+        <%= f.input :name, label: "Nom de la catégorie", placeholder: "SEO, WordPress, HTML, Tutoriel..." %>
         <%= f.submit "Ajouter", class: "btn btn-primary" %>
       <% end %>
       <h4 class="text-center">
