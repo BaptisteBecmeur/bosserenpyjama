@@ -10,7 +10,7 @@
           </div>
           <ul class="list-unstyled list-inline">
             <li>
-              <%= link_to about_path do %>
+              <%= link_to start_path do %>
               <div class="btn btn-default btn-top">
                 <h5>Je commence</h5>
               </div>
@@ -19,7 +19,7 @@
           </ul>
           <div class="search-form">
               <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
-              <%= f.input :query, label: false, placeholder: "Entrez un titre, une ville..." %>
+              <%= f.input :query, label: false, placeholder: "???:)" %>
               <%= f.submit "Rechercher",  class: "btn btn-success" %>
               <% end %>
             </div>
@@ -53,7 +53,7 @@
       <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <h1>Une sélection de sites </h1>
-              <h2>Qui vont vraiment vous aider !</h2>
+              <h2>Qui va vraiment vous aider !</h2>
               <div class="training-section">
                 <%= link_to "En savoir plus", "https://synestasia.typeform.com/to/jwIhSA", class:'subscribe-button subscribe-training', target: '_blank' %>
               </div>

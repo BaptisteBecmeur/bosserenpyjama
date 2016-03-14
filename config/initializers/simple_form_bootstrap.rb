@@ -147,3 +147,4 @@ SimpleForm.setup do |config|
     time: :multi_select
   }
 end
+
