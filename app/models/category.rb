@@ -1,6 +1,5 @@
 class Category < ActiveRecord::Base
   belongs_to :post
 
-
-  validates :name, presence: true, length: { maximum: 1 }
+  validates :name, presence: true
 end
