@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308132249) do
+ActiveRecord::Schema.define(version: 20160314164750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20160308132249) do
   end
 
   add_index "categories", ["post_id"], name: "index_categories_on_post_id", using: :btree
+
+  create_table "favs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "favs", ["post_id"], name: "index_favs_on_post_id", using: :btree
+  add_index "favs", ["user_id"], name: "index_favs_on_user_id", using: :btree
 
   create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"
@@ -76,5 +86,7 @@ ActiveRecord::Schema.define(version: 20160308132249) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "categories", "posts"
+  add_foreign_key "favs", "posts"
+  add_foreign_key "favs", "users"
   add_foreign_key "posts", "users"
 end
