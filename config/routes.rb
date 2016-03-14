@@ -10,11 +10,13 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :favs, only: [:index, :destroy]
+
 
   resources :posts do
     resources :categories
   end
+
+  resources :favs, only: [:index, :destroy]
 
   post 'favs/:post_id', to: 'favs#create', as: "post_favs"
   get 'favs', to: 'favs#index'
