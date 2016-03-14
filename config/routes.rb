@@ -10,9 +10,15 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  resources :favs, only: [:index, :destroy]
+
   resources :posts do
     resources :categories
   end
+
+  post 'favs/:post_id', to: 'favs#create', as: "post_favs"
+  get 'favs', to: 'favs#index'
+  delete 'favs/:post_id', to: 'favs#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
