@@ -12,7 +12,9 @@
         <h6 class="card-post-author">
           posté par Baptiste
         </h6>
-        <%= link_to "Supprimer", fav_path(fav), class:'btn btn-default', method: :delete %>
+        <%= link_to fav_path(fav), class:'trash-article', data: { confirm: 'Vous allez retirer cet article de vos favoris, êtes-vous sûre ?' }, method: :delete do %>
+          <%= image_tag("delete-btn.png") %>
+        <% end %>
       <% end %>
     </div>
       <% end %>

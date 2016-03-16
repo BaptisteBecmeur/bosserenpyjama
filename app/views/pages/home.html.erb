@@ -21,7 +21,7 @@
           <div class="search-form">
               <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
               <%= f.input :query, label: false, placeholder: "???:)" %>
-              <%= f.submit "",  class: "btn btn-success fa fa-search" %>
+              <%= f.submit "Rechercher",  class: "btn btn-success" %>
               <% end %>
             </div>
         </div>
