@@ -10,7 +10,19 @@
   justify-content: space-between;
 }
 
-/* Optional class to fix the navbar on top */
+.blog-style {
+  color:#3DC3CB;
+  padding: 10px;
+  font-weight: 300;
+  font-size: 18px;
+
+  &:hover {
+    color:#1F6266;
+    text-decoration: none;
+  }
+}
+
+/* Optional class to fix the navbar on top
 .navbar-wagon-fixed {
   position: fixed;
   left: 0px;
