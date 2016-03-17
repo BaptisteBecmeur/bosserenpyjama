@@ -1,23 +1,31 @@
-<div class="container" id="home-articles">
-  <div class="row">
-    <h2>Mes favoris</h2>
-        <% @favs.each do |fav| %>
-      <div class=" col-sm-12 col-xs-6 col-md-4 container-cards">
-        <div class="card-filter-home" style="background: url(<%= cloudinary_url fav.post.cover %>); background-size:cover">
+<div class="container-formpost">
+  <div id="fav-articles">
+    <div class="container">
+      <div class="row">
+        <div class="text-center separ-blog">
+          <h2>Mes favoris</h2>
+        </div>
+            <% @favs.each do |fav| %>
+            <ul>
+              <li class=" col-sm-12 col-xs-6 col-md-4 container-cards">
+                <div class="card-filter-home" style="background: url(<%= cloudinary_url fav.post.cover %>); background-size:cover">
+                </div>
+                <div class="card-details">
+                  <%= link_to post_path(fav.post) do %>
+                  <span class="card-post-tag card-post-tag-<%= fav.post.tag.downcase %>"><%= fav.post.tag %></span>
+                  <h4><%= fav.post.title %></h4>
+                  <h6 class="card-post-author">
+                    posté par Baptiste
+                  </h6>
+                  <%= link_to fav_path(fav), class:'trash-article', data: { confirm: 'Vous allez retirer cet article de vos favoris, êtes-vous sûre ?' }, method: :delete do %>
+                  <%= image_tag("delete-btn.png") %>
+                  <% end %>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
       </div>
-      <div class="card-details">
-        <%= link_to post_path(fav.post) do %>
-        <span class="card-post-tag card-post-tag-<%= fav.post.tag.downcase %>"><%= fav.post.tag %></span>
-        <h4><%= fav.post.title %></h4>
-        <h6 class="card-post-author">
-          posté par Baptiste
-        </h6>
-        <%= link_to fav_path(fav), class:'trash-article', data: { confirm: 'Vous allez retirer cet article de vos favoris, êtes-vous sûre ?' }, method: :delete do %>
-          <%= image_tag("delete-btn.png") %>
-        <% end %>
-      <% end %>
-    </div>
-      <% end %>
     </div>
   </div>
 </div>
