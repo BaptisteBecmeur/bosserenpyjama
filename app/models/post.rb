@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   has_many :categories, dependent: :destroy
+  has_many :favs, dependent: :destroy
 
   TAGS = ["Design", "Mode", "Tendance", "Life-Style", "Tradition", "Gastronomie", "Insolite", "Technologie"]
 
@@ -16,5 +17,9 @@ class Post < ActiveRecord::Base
     associated_against: {
       categories: [:name]
     }
+
+  def is_faved_by(user)
+    self.favs.where(user: user).take
+  end
 
 end

@@ -223,16 +223,16 @@
     height: 240px;
     overflow: hidden;
 
-    // .card-fav {
-    //   position: absolute;
-    //   right: 40px;
-    //   bottom: 25px;
-    // }
-
     .card-post-author {
       color: white;
       font-style: italic;
       font-weight: 300;
+    }
+
+      .card-fav {
+      position: absolute;
+      right: 40px;
+      bottom: 25px;
     }
 
     .card-post-tag {
