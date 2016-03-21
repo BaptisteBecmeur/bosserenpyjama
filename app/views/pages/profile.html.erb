@@ -28,7 +28,7 @@
             <% if @user.social_link2.blank? %>
             <% else %>
             <%= link_to @user.social_link2, target: "_blank" do %>
-            <i class="fa fa-facebook fa-lg"></i>
+            <i class="fa fa-facebook-square fa-lg"></i>
             <% end %>
             <% end %>
           </li>
@@ -41,8 +41,11 @@
             <% end %>
           </li>
         </ul>
-
-        <%= link_to t(".top_call_to_action", default: "Je créé mon profil comme un chef"), "#", class: "navbar-wagon-item navbar-wagon-button btn text-center" %>
+        <% if @user.social_link1.blank? %>
+        <%= link_to t(".top_call_to_action", default: "Je créé mon profil comme un chef"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center" %>
+        <% else %>
+          <%= link_to t(".top_call_to_action", default: "Modifier mon profil"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center" %>
+        <% end %>
         </div>
       </div>
     </div>
