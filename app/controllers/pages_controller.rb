@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def legal
+
   end
 
   def contact
@@ -16,4 +17,10 @@ class PagesController < ApplicationController
 
   def start
   end
+
+  def profile
+    @user = current_user
+  end
+
+
 end

@@ -3,6 +3,13 @@
     <div class="container">
       <div class="row">
         <div class="text-center separ-blog">
+
+           <div class="search-form">
+      <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
+        <%= f.input :query, label: false, placeholder: "" %>
+          <%= f.submit "Rechercher",  class: "btn btn-sucess" %>
+      <% end %>
+    </div>
           <h1>Lisez mes derniers articles</h1>
         </div>
         <ul>

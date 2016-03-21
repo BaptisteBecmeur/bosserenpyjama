@@ -35,8 +35,8 @@
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Mon Profil" %>
+              <%= link_to profile_path do %>
+                <i class="fa fa-user"></i> <%= t ".profile", default: "Mon Profil" %>
               <% end %>
             </li>
             <li>
@@ -47,6 +47,11 @@
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-pencil-square-o"></i> <%= t ".profile", default: "Modifier mon profil" %>
               <% end %>
             </li>
           </ul>
@@ -61,7 +66,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Je me lance"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Je me lance"), start_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
