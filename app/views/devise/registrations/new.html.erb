@@ -12,6 +12,14 @@
             <%= f.input :email, label: 'Email', required: true, autofocus: true %>
             <%= f.input :password, label: 'Mot de passe', required: true, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
             <%= f.input :password_confirmation, label: 'Confirmation du mot de passe', required: true %>
+          <div class="row">
+            <div class="col-sm-6">
+              <%= f.input :first_name, label: 'Prénom' %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.input :last_name, label: 'Nom' %>
+            </div>
+          </div>
           </div>
 
           <div class="form-actions">
