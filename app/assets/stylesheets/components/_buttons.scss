@@ -17,3 +17,16 @@
 .btn-research {
   color: #3DC3CB;
 }
+
+.second-button {
+  margin-top: 125px;
+  width: 250px;
+}
+
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: #3DC3CB;
+  }
+}

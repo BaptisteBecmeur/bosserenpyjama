@@ -32,7 +32,7 @@
         <%= f.input :city, label: 'Ta ville', placeholder: "Tu vis ou ?" %>
           <hr/>
         <%= f.input :biography, label: 'Biographie', placeholder: "T'as fais quoi ?" %>
-        <%= f.input :website, label: 'Site web', placeholder: "T'as un site ? genre www.tonsiteweb.com" %>
+        <%= f.input :website, label: 'Site web', placeholder: "http://www.tonsiteweb.com" %>
         <%= f.input :social_link1, label: 'Ton Twitter', placeholder: "https://twitter.com/johndoe" %>
         <%= f.input :social_link2, label: 'Ton Facebook', placeholder: "https://www.facebook.com/john.doe" %>
         <%= f.input :social_link3, label: 'Ton LinkedIn', placeholder: "https://www.linkedin.com/" %>
@@ -43,11 +43,8 @@
         <% end %>
         <hr/>
         <div class="text-center">
-        <h4>Cancel my account</h4>
 
-        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-        <%= link_to "Back", :back %>
+        <p><%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
        </div>
       </div>
     </div>
