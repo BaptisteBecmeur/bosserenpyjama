@@ -5,22 +5,18 @@ class PagesController < ApplicationController
   def about
   end
 
-  def legal
-
+  def start
   end
 
   def contact
   end
 
-  def formation
-  end
-
-  def start
+  def legal
   end
 
   def profile
-    @user = current_user
   end
 
-
+  def formation
+  end
 end
