@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'formation', to: 'pages#formation'
   get 'start', to: 'pages#start'
+  get 'profile', to: 'pages#profile'
 
   root to: 'pages#home'
-
-
 
   resources :posts do
     resources :categories

@@ -1,0 +1,53 @@
+<div class="container-login">
+  <div class="container-fluid">
+    <div class="row">
+      <div class= "col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 form-login ">
+        <div class="form-bg form-one text-center">
+          <div class="profile-picture">
+            <%= image_tag current_user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}" %>
+          </div>
+            <div id="name-profile">
+              <h1 class="text-center">
+                <% if @user.first_name.blank? %>
+                <strong>C'est quoi ton nom ?</strong>
+                <% else %>
+                <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize[0] %>
+                <% end %>
+              </h1>
+            </div>
+        <ul class="list-unstyled list-inline text-center">
+          <li>
+            <% if @user.social_link1.blank? %>
+            <% else %>
+            <%= link_to @user.social_link1, target: "_blank" do %>
+            <i class="fa fa-twitter fa-lg"></i>
+            <% end %>
+            <% end %>
+          </li>
+          <li>
+            <% if @user.social_link2.blank? %>
+            <% else %>
+            <%= link_to @user.social_link2, target: "_blank" do %>
+            <i class="fa fa-facebook-square fa-lg"></i>
+            <% end %>
+            <% end %>
+          </li>
+          <li>
+            <% if @user.social_link3.blank? %>
+            <% else %>
+            <%= link_to @user.social_link3, target: "_blank" do %>
+            <i class="fa fa-linkedin fa-lg"></i>
+            <% end %>
+            <% end %>
+          </li>
+        </ul>
+        <% if @user.social_link1.blank? %>
+        <%= link_to t(".top_call_to_action", default: "Je créé mon profil comme un chef"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center" %>
+        <% else %>
+          <%= link_to t(".top_call_to_action", default: "Modifier mon profil"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,23 @@
 <div class="container-formpost">
   <div id="home-articles">
     <div class="container">
-      <div class="row">
-        <div class="text-center separ-blog">
-          <h1>Lisez mes derniers articles</h1>
+      <div class="text-center separ-blog">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="search-form">
+              <%= simple_form_for :search, url: posts_path, method: :get, :html => { :class => 'form-inline' } do |f| %>
+              <%= f.input :query, label: false, placeholder: "" %>
+              <%= f.submit "Rechercher",  class: "btn btn-default" %>
+              <% end %>
+            </div>
+          </div>
         </div>
+        <h1>Lisez mes derniers articles</h1>
         <ul>
           <% @posts.each do |post| %>
-            <li class=" col-sm-12 col-xs-6 col-md-4 container-cards">
-              <%= render 'postuser', post: post %>
-            </li>
+          <li class=" col-sm-12 col-xs-6 col-md-4 container-cards">
+            <%= render 'postuser', post: post %>
+          </li>
           <% end %>
         </ul>
       </div>
