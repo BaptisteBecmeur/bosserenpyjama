@@ -1,23 +1,13 @@
 class UsersController < ApplicationController
 
-  def show
-    @user = User.find(params[:id])
+  before_filter :authenticate_user!, except: [:index]
+
+  def index
+    @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-  end
-
-  def create
-  end
-
-  def new
-  end
-
-  def update
-  end
-
-  def edit
   end
 
   def destroy
