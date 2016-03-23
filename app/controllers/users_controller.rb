@@ -14,15 +14,15 @@ class UsersController < ApplicationController
   def destroy
   end
 
-  # private
+  private
 
-  # def find_user
-  #   @user = User.find(params[:id])
-  # end
+  def find_user
+    @user = User.find(params[:id])
+  end
 
-  # def user_params
-  #   params.require(:user).permit(:first_name, :last_name, :picture)
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :picture)
 
-  # end
+  end
 
 end
