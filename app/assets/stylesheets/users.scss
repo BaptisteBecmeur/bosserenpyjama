@@ -6,10 +6,59 @@
 .form-one {
   padding-top: 20px;
 
+  img {
+      width: 150px;
+    }
 
   .fa-linkedin, .fa-facebook-square, .fa-twitter {
   color: #3DC3CB;
   }
 }
+
+#all-users p {
+  text-align: center;
+}
+
+
+
+.container-buddies {
+
+  background-color: #f1f1f1;
+  padding: 0;
+  position: relative;
+
+  .form-bg1 {
+    position: relative;
+    border:1px solid #fff;
+    margin-bottom: 130px;
+    width: 100%;
+    height: 380px;
+  }
+
+  .form-three {
+    padding-top: 20px;
+  }
+
+  .form-buddy {
+    background-color: #fff;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
+
+  img {
+    border-radius: 50px;
+    width: 50px;
+  }
+
+ h3 {
+    font-weight: 300;
+  }
+}
+
+
 
 

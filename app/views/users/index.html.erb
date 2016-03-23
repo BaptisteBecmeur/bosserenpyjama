@@ -1,0 +1,55 @@
+<div class="container-buddies">
+  <div class="container-fluid">
+    <div class="row">
+      <div class= "col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 form-buddy ">
+        <div class="form-bg1 form-three text-center">
+
+          <% @users.each do |user| %>
+          <div class="text-center">
+            <%= user.first_name %>
+
+            <%= image_tag user.picture || "http://api.adorable.io/avatars/300/#{user.email}" %>
+
+            </div>
+              <% end %>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<table class="table table-striped table-hover table-users">
+    <thead>
+      <tr>
+        <th>
+          Buddies
+        </th>
+        <th>
+          Prénom
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to @user_id_path do %>
+          <%= image_tag user.picture || "http://api.adorable.io/avatars/300/#{user.email}" %>
+          <% end %>
+        </td>
+        <td>
+
+          <%= link_to @user_path do %>
+          <%= user.first_name %>
+
+          <% end %>
+        </td>
+        <td>
+          <!-- link_to "Supprimer des favs", fav_path(fav), method: :delete -->
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
