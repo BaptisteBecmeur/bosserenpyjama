@@ -2,6 +2,12 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :favs, dependent: :destroy
 
+  has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
+  has_many :followers, through: :follower_relationships, source: :follower
+
+  has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
+  has_many :following, through: :following_relationships, source: :following
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,7 +15,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
-  after_create :subscribe_to_newsletter
+  # after_create :subscribe_to_newsletter
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -25,10 +31,10 @@ class User < ActiveRecord::Base
     end
   end
 
-private
+#private
 
-  def subscribe_to_newsletter
-    SubscribeToNewsletter.new(self).run
-  end
+  # def subscribe_to_newsletter
+  #   SubscribeToNewsletter.new(self).run
+  # end
 
 end
