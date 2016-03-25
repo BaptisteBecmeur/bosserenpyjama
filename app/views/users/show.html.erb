@@ -67,7 +67,7 @@
       <div class= "col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 form-login ">
         <div class="form-bg form-one text-center">
           <h2>Friends</h2>
-          <ul>
+          <ul class="list-unstyled">
             <% for friendship in @user.friendships %>
               <li>
                 <%=h friendship.friend.first_name %>
