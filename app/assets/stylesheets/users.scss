@@ -5,7 +5,6 @@
   }
 }
 
-
 #name-profile h1 {
   font-weight: 300;
   font-size: 30px;
@@ -27,6 +26,10 @@
       width: 40px;
       border-radius: 50%;
     }
+
+  h6 {
+    font-size: 13px;
+  }
 
   .tiny-space {
     margin-top: 10px;
@@ -76,9 +79,11 @@
     width: 50px;
   }
 
- h3 {
+ h2, h3, h4, {
     font-weight: 300;
   }
 }
 
-
+h2, h4, {
+    font-weight: 300;
+  }
