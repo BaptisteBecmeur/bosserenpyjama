@@ -9,65 +9,62 @@
 
       <div class="col-md-4">
         <div class="form-login">
-        <div class=" form-bg form-one text-center">
+          <div class=" form-bg form-one text-center">
 
-            <%= image_tag @user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "user-picture" %>
+              <%= image_tag @user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "user-picture" %>
 
-            <div id="name-profile">
-              <h1 class="text-center">
-                <% if @user.first_name.blank? %>
-                <strong>C'est quoi ton nom ?</strong>
-                <% else %>
-                <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize[0] %>.
-                <% end %>
-              </h1>
-            </div>
-        <ul class="list-unstyled list-inline text-center">
-          <li>
-            <% if @user.social_link1.blank? %>
-            <% else %>
-            <%= link_to @user.social_link1, target: "_blank" do %>
-            <i class="fa fa-twitter fa-lg"></i>
-            <% end %>
-            <% end %>
-          </li>
-          <li>
-            <% if @user.social_link2.blank? %>
-            <% else %>
-            <%= link_to @user.social_link2, target: "_blank" do %>
-            <i class="fa fa-facebook-square fa-lg"></i>
-            <% end %>
-            <% end %>
-          </li>
-          <li>
-            <% if @user.social_link3.blank? %>
-            <% else %>
-            <%= link_to @user.social_link3, target: "_blank" do %>
-              <i class="fa fa-linkedin fa-lg"></i>
+              <div id="name-profile">
+                <h1 class="text-center">
+                  <% if @user.first_name.blank? %>
+                  <strong>C'est quoi ton nom ?</strong>
+                  <% else %>
+                  <%= @user.first_name.capitalize %> <%=@user.last_name.capitalize[0] %>.
+                  <% end %>
+                </h1>
+              </div>
+          <ul class="list-unstyled list-inline text-center">
+            <li>
+              <% if @user.social_link1.blank? %>
+              <% else %>
+              <%= link_to @user.social_link1, target: "_blank" do %>
+              <i class="fa fa-twitter fa-lg"></i>
               <% end %>
-            <% end %>
-          </li>
-        </ul>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.social_link2.blank? %>
+              <% else %>
+              <%= link_to @user.social_link2, target: "_blank" do %>
+              <i class="fa fa-facebook-square fa-lg"></i>
+              <% end %>
+              <% end %>
+            </li>
+            <li>
+              <% if @user.social_link3.blank? %>
+              <% else %>
+              <%= link_to @user.social_link3, target: "_blank" do %>
+                <i class="fa fa-linkedin fa-lg"></i>
+                <% end %>
+              <% end %>
+            </li>
+          </ul>
 
-        <% if @user.website.blank? %>
-          <p>J'ai toujours pas de site web :)</p>
-            <% else %>
-          <%= link_to @user.website, @user.website, target: "_blank" %>
-        <% end %>
-
-        <% if  @user == current_user %>
-          <% if @user.social_link1.blank? %>
-            <%= link_to t(".top_call_to_action", default: "Je créé mon profil comme un chef"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center" %>
-          <% else %>
-            <%= link_to t(".top_call_to_action", default: "J'ajoute encore des infos"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center second-button" %>
+          <% if @user.website.blank? %>
+            <p>J'ai toujours pas de site web :)</p>
+              <% else %>
+            <%= link_to @user.website, @user.website, target: "_blank" %>
           <% end %>
-        <% end %>
+
+          <% if  @user == current_user %>
+            <% if @user.social_link1.blank? %>
+              <%= link_to t(".top_call_to_action", default: "Je créé mon profil comme un chef"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center" %>
+            <% else %>
+              <%= link_to t(".top_call_to_action", default: "J'ajoute encore des infos"), edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn text-center second-button" %>
+            <% end %>
+          <% end %>
+          </div>
         </div>
-      </div>
-
-
-      </div>
-
+        </div>
       <div class="col-md-4">
 
           <div class="form-login">
@@ -76,7 +73,11 @@
             <ul class="list-unstyled" >
               <% for friendship in @user.friendships %>
                 <li>
-                  <%=h friendship.friend.first_name %>
+                  <div class="friend-picture">
+                    <%=h image_tag friendship.friend.picture || "http://api.adorable.io/avatars/300/#{friendship.friend.email}"%><br/>
+                  </div>
+                    <%=h friendship.friend.first_name %>
+
                   (<%= link_to "remove", friendship, :method => :delete %>)
                 </li>
               <% end %>

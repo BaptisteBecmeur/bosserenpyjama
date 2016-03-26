@@ -6,7 +6,6 @@
 }
 
 
-
 #name-profile h1 {
   font-weight: 300;
   font-size: 30px;
@@ -23,6 +22,12 @@
   .fa-linkedin, .fa-facebook-square, .fa-twitter {
   color: #3DC3CB;
   }
+
+  .friend-picture img {
+      width: 40px;
+      border-radius: 50%;
+    }
+
 }
 
 #all-users p {
@@ -67,7 +72,5 @@
     font-weight: 300;
   }
 }
-
-
 
 
