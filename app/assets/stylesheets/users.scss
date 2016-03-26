@@ -15,7 +15,7 @@
   padding-top: 20px;
 
   img {
-      width: 120px;
+      width: 100px;
       border-radius: 50%;
     }
 
@@ -28,12 +28,20 @@
       border-radius: 50%;
     }
 
+  .tiny-space {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .mini-space {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
 }
 
 #all-users p {
   text-align: center;
 }
-
 
 .container-buddies {
 
