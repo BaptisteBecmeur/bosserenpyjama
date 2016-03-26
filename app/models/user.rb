@@ -2,12 +2,10 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
   has_many :favs, dependent: :destroy
 
-  has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
-  has_many :followers, through: :follower_relationships, source: :follower
-
-  has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
-  has_many :following, through: :following_relationships, source: :following
-
+  has_many :friendships
+  has_many :friends, :through => :friendships
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

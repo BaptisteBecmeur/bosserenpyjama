@@ -24,8 +24,8 @@ gem 'cloudinary'
 gem 'pg_search'
 gem 'gibbon'
 
-gem 'faker'
-gem 'faker_extension_fr'
+# gem 'faker'
+# gem 'faker_extension_fr'
 
 group :development, :test do
   gem 'binding_of_caller'
