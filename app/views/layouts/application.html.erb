@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO</title>
+    <title>Bosser en pyj</title>
     <%= csrf_meta_tags %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,9 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class="flashes">
+      <%= render 'shared/flashes' %>
+    </div>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
