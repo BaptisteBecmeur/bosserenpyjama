@@ -28,7 +28,11 @@
     }
 
   h6 {
-    font-size: 13px;
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 14px;
   }
 
   .tiny-space {
@@ -38,6 +42,11 @@
 
   .mini-space {
     margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .little-space {
+    margin-top: 80px;
     margin-bottom: 30px;
   }
 }
@@ -76,7 +85,7 @@
 
   img {
     border-radius: 50px;
-    width: 50px;
+    width: 45px;
   }
 
  h2, h3, h4, {

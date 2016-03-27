@@ -43,12 +43,11 @@
                 <% end %>
               </li>
             </ul>
-            <% if @user.website.blank? %>
-              <p>J'ai toujours pas de site web :)</p>
-                <% else %>
-              <%= link_to @user.website, target: "_blank"  %>
-
-            <% end %>
+              <% if @user.website.blank? %>
+                <p>J'ai toujours pas de site web :)</p>
+                  <% else %>
+                <%= link_to @user.website, target: "_blank"  %>
+              <% end %>
 
             <% if  @user == current_user %>
 
