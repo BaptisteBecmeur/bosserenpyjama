@@ -1,10 +1,9 @@
 .container-login {
   .form-login {
-    margin-bottom:20px;
+    margin-top:25px;
+    margin-bottom:25px;
   }
 }
-
-
 
 #name-profile h1 {
   font-weight: 300;
@@ -15,18 +14,46 @@
   padding-top: 20px;
 
   img {
-      width: 150px;
+      width: 100px;
+      border-radius: 50%;
     }
 
   .fa-linkedin, .fa-facebook-square, .fa-twitter {
   color: #3DC3CB;
+  }
+
+  .friend-picture img {
+      width: 40px;
+      border-radius: 50%;
+    }
+
+  h6 {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .tiny-space {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .mini-space {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  .little-space {
+    margin-top: 80px;
+    margin-bottom: 30px;
   }
 }
 
 #all-users p {
   text-align: center;
 }
-
 
 .container-buddies {
 
@@ -58,14 +85,14 @@
 
   img {
     border-radius: 50px;
-    width: 50px;
+    width: 45px;
   }
 
- h3 {
+ h2, h3, h4, {
     font-weight: 300;
   }
 }
 
-
-
-
+h2, h4, {
+    font-weight: 300;
+  }
