@@ -79,15 +79,12 @@
                   <div class="friend-picture">
                     <%=h image_tag friendship.friend.picture || "http://api.adorable.io/avatars/300/#{friendship.friend.email}" %>
                   </div>
-                    <h6>
-                      <%=h friendship.friend.first_name %> <%=h friendship.friend.last_name[0] %>.
+                  <h6>
+                    <%=h friendship.friend.first_name %> <%=h friendship.friend.last_name[0] %>.
                       <%= link_to friendship, :method => :delete do %>
                       <i class="fa fa-times fa-lg"></i>
                     <% end %>
-                    </h6>
-
-
-
+                  </h6>
                 </li>
               <% end %>
             </ul>
@@ -95,16 +92,6 @@
             <div class="text-center">
               <h5><%= link_to "Find Friends", users_path, class: "btn btn-default mini-space friends-button" %></h5>
             </div>
-            <!-- <h2>
-              Friended by Users
-            </h2>
-            <ul class="list-unstyled">
-              <% for user in @user.inverse_friends %>
-                <li class="col-md-3">
-                  <%=h user.first_name %>
-                </li>
-              <% end %>
-            </ul> -->
           </div>
         </div>
       </div>
