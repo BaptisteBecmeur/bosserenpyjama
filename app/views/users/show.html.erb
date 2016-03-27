@@ -3,6 +3,15 @@
     <div class="row">
       <div class="col-md-4">
         Test
+
+        <!-- Notification -->
+        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+          <div class="badge-container">
+              <i class="fa fa-envelope-o"></i>
+          <div class="badge badge-blue">3</div>
+        </div>
+        <% end %>
+
       </div>
       <div class="col-md-4">
         <div class="form-login">
@@ -92,6 +101,7 @@
             <div class="text-center">
               <h5><%= link_to "Find Friends", users_path, class: "btn btn-default mini-space friends-button" %></h5>
             </div>
+
           </div>
         </div>
       </div>
