@@ -97,11 +97,11 @@
                 </li>
               <% end %>
             </ul>
-
-            <div class="text-center">
-              <h5><%= link_to "Find Friends", users_path, class: "btn btn-default mini-space friends-button" %></h5>
-            </div>
-
+            <% if @user == current_user %>
+              <div class="text-center">
+                <h5><%= link_to "Find Friends", users_path, class: "btn btn-default mini-space friends-button" %></h5>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
