@@ -2,21 +2,39 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4">
-        Test
+        <div class="form-login">
+          <div class=" form-bg form-one text-center">
+            <div class="text-center">
+              <% if current_user.id == @user.id %>
+                <p>Hey</p>
+              <% else %>
+                <%= link_to "Add Me as Friend", friendships_path(:friend_id => @user), :method => :post, class: "btn btn-default" %>
+              <% end %>
+            </div>
 
+            <h4>Ma Room </h4>
         <!-- Notification -->
-        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-          <div class="badge-container">
+            <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+            <div class="badge-container">
               <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-        <% end %>
+              <div class="badge badge-blue">3</div>
+            </div>
+            <% end %>
 
+
+
+
+
+
+
+
+          </div>
+        </div>
       </div>
       <div class="col-md-4">
         <div class="form-login">
-        <div class=" form-bg form-one text-center">
-          <%= image_tag @user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "user-picture" %>
+          <div class=" form-bg form-one text-center">
+            <%= image_tag @user.picture || "http://api.adorable.io/avatars/300/#{current_user.email}", class: "user-picture" %>
           <div id="name-profile">
             <h1 class="text-center">
               <% if @user.first_name.blank? %>
@@ -78,19 +96,22 @@
         <div class="form-bg form-one text-center">
           <div class="tiny-space">
             <h4>
-              Mes buddies <% current_user.friends.count %>
+              Mes buddies
             </h4>
           </div>
-
             <ul class="list-unstyled" >
-              <% for friendship in @user.friendships %>
-                <li class="col-md-3">
+              <% @user.friendships.each do |friendship| %>
+                <li class="col-sm-6 col-sm-3 col-md-3 col-md-offset">
                   <div class="friend-picture">
-                    <%=h image_tag friendship.friend.picture || "http://api.adorable.io/avatars/300/#{friendship.friend.email}" %>
+                    <%= link_to user_path(friendship.friend) do %>
+                      <%= h image_tag friendship.friend.picture || "http://api.adorable.io/avatars/300/#{friendship.friend.email}" %>
+                    <% end %>
                   </div>
                   <h6>
-                    <%=h friendship.friend.first_name %> <%=h friendship.friend.last_name[0] %>.
-                      <%= link_to friendship, :method => :delete do %>
+                    <%= link_to user_path(friendship.friend) do %>
+                      <%=h friendship.friend.first_name %> <%=h friendship.friend.last_name[0] %>
+                    <% end %>
+                    <%= link_to friendship, :method => :delete do %>
                       <i class="fa fa-times fa-lg"></i>
                     <% end %>
                   </h6>
@@ -99,7 +120,7 @@
             </ul>
             <% if @user == current_user %>
               <div class="text-center">
-                <h5><%= link_to "Find Friends", users_path, class: "btn btn-default mini-space friends-button" %></h5>
+                <h5><%= link_to "Find Buddies", users_path, class: "btn btn-default mini-space friends-button" %></h5>
               </div>
             <% end %>
           </div>
@@ -108,3 +129,6 @@
     </div>
   </div>
 </div>
+
+
+
