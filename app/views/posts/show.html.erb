@@ -30,6 +30,10 @@
 
                 <%= render 'comments' %>
 
+                <!-- iterations comments ajouter les conditions
+              -->
+
+
               <div class="text-center buttons-view-post">
                 <% if current_user.try(:admin?) %>
                 <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-default btn-md" %>
