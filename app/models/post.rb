@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :categories, dependent: :destroy
   has_many :favs, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   TAGS = ["Design", "Mode", "Tendance", "Life-Style", "Tradition", "Gastronomie", "Insolite", "Technologie"]
 

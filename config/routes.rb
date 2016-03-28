@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :categories
+      resources :comments
   end
 
   resources :favs, only: [:index, :destroy]
