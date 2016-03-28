@@ -27,6 +27,9 @@
               <div class="content-part">
                 <p><%= @post.content %></p>
               </div>
+
+                <%= render 'comments' %>
+
               <div class="text-center buttons-view-post">
                 <% if current_user.try(:admin?) %>
                 <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-default btn-md" %>
