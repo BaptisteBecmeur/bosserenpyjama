@@ -4,7 +4,7 @@ before_action :set_post
 
 def create
   @comment = @post.comments.build(comment_params)
-  @comment.user_id = current_user.id
+  @comment.user = current_user
 
   if @comment.save
     flash[:success] = "You commented the hell out of that post!"
@@ -20,7 +20,7 @@ def destroy
 
   @comment.destroy
   flash[:success] = "Comment deleted :("
-  redirect_to root_path
+  redirect_to :back
 end
 
 private

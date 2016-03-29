@@ -196,7 +196,6 @@
 
   h6 {
     padding-top: 40px;
-    padding-bottom: 30px;
     font-weight: 300;
   }
 
@@ -354,6 +353,11 @@
         padding-top: 40px;
         font-family: "Avenir", "Helvetica", "sans-serif";
         font-size: 30px;
+      }
+
+      img {
+      width: 120px;
+      border-radius: 50%;
       }
     }
   }
