@@ -33,17 +33,18 @@
                 <ul class="list-unstyled">
                   <% @post.comments.each do |comment| %>
                   <li>
-                    <h6>de <%= image_tag comment.user.picture || "http://api.adorable.io/avatars/300/#{comment.user.email}", class: "comment-picture" %> <%= comment.user.first_name %> <%= comment.user.last_name[0] %>.</h6>
+
+                    <h6><%= image_tag comment.user.picture || "http://api.adorable.io/avatars/300/#{comment.user.email}", class: "user-picture" %> <%= comment.user.first_name %> <%= comment.user.last_name[0] %>. - <%= l comment.user.created_at, format: :short %></h6>
                     <p><%= comment.content %></p>
                   </li>
-                  <% if  %>
+                  <% if comment.user == current_user  %>
                     <%= link_to post_comment_path(post_id: @post.id, id: comment.id), method: :delete, data: { confirm: "Are you sure?" } do %>
                       <i class="fa fa-trash"></i>
                     <% end %>
                   <% end %>
                   <% end %>
                 </ul>
-                <%= render 'comments' %>
+                  <%= render 'comments' %>
               </div>
 
               <div class="text-center buttons-view-post">

@@ -96,6 +96,18 @@
       color: rgba(255,255,255,0.5);
       font-size: 32.5vw;
     }
+
+    .comments-part {
+      img {
+        border-radius: 50%;
+        width: 35px;
+      }
+
+      p {
+        padding-left: 20px;
+        font-size: 16px;
+      }
+    }
   }
 
 // View Article
@@ -354,12 +366,14 @@
         font-family: "Avenir", "Helvetica", "sans-serif";
         font-size: 30px;
       }
-
-      img {
-      width: 120px;
-      border-radius: 50%;
-      }
     }
+  }
+}
+
+.comment-picture  {
+  img {
+  width: 20px;
+  border-radius: 50%;
   }
 }
 
