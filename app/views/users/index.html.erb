@@ -10,7 +10,7 @@
                     <p class="text-center">Buddies</p>
                   </th>
                   <th>
-                    <p class="text-center">Prénom</p>
+                    <p class="text-center">Name</p>
                   </th>
                   <th>
                     <p class="text-center">Follow</p>
@@ -27,7 +27,7 @@
                   </td>
                   <td>
                     <%= link_to user_path(user) do %>
-                    <%= user.first_name %>
+                    <%= user.first_name %> <%= user.last_name[0] %>.
                     <% end %>
                   </td>
                   <td>

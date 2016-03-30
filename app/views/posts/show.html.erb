@@ -34,7 +34,7 @@
                   <% @post.comments.each do |comment| %>
                   <li>
 
-                    <h6><%= image_tag comment.user.picture || "http://api.adorable.io/avatars/300/#{comment.user.email}", class: "user-picture" %> <%= comment.user.first_name %> <%= comment.user.last_name[0] %>. - <%= l comment.user.created_at, format: :short %></h6>
+                    <h6><%= image_tag comment.user.picture || "http://api.adorable.io/avatars/300/#{comment.user.email}", class: "user-picture" %> <%= comment.user.first_name %> <%= comment.user.last_name[0] %>. </h6>
                     <p><%= comment.content %></p>
                   </li>
                   <% if comment.user == current_user  %>
