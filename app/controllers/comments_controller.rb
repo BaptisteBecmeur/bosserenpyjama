@@ -7,19 +7,18 @@ def create
   @comment.user = current_user
 
   if @comment.save
-    flash[:success] = "You commented the hell out of that post!"
+    flash[:notice] = "You commented the hell out of that post!"
     redirect_to :back
   else
-    flash[:alert] = "Check the comment form, something went horribly wrong."
+    flash[:notice] = "Check the comment form, something went horribly wrong."
     render root_path
   end
 end
 
 def destroy
   @comment = @post.comments.find(params[:id])
-
   @comment.destroy
-  flash[:success] = "Comment deleted :("
+  flash[:notice] = "Comment deleted :("
   redirect_to :back
 end
 
