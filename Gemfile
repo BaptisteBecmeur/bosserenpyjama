@@ -24,6 +24,8 @@ gem 'cloudinary'
 gem 'pg_search'
 gem 'gibbon'
 
+gem 'mailboxer'
+
 # gem 'faker'
 # gem 'faker_extension_fr'
 
