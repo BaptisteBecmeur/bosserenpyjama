@@ -96,6 +96,18 @@
       color: rgba(255,255,255,0.5);
       font-size: 32.5vw;
     }
+
+    .comments-part {
+      img {
+        border-radius: 50%;
+        width: 35px;
+      }
+
+      p {
+        padding-left: 20px;
+        font-size: 16px;
+      }
+    }
   }
 
 // View Article
@@ -195,8 +207,7 @@
   }
 
   h6 {
-    padding-top: 40px;
-    padding-bottom: 30px;
+    padding-top: 20px;
     font-weight: 300;
   }
 
@@ -356,6 +367,13 @@
         font-size: 30px;
       }
     }
+  }
+}
+
+.comment-picture  {
+  img {
+  width: 20px;
+  border-radius: 50%;
   }
 }
 

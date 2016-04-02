@@ -5,7 +5,7 @@
   <% end %>
 
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-right "> <!-- hidden-xs hidden-sm -->
 
     <%= link_to t(".top_call_to_action", default: "BLOG"), posts_path, class: "blog-style" %>
 
@@ -20,14 +20,6 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
-
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -41,7 +33,7 @@
             </li>
             <li>
               <%= link_to favs_path do %>
-                <i class="fa fa-heart"></i> <%= t ".profile", default: "Mes favoris" %>
+                <i class="fa fa-heart"></i> <%= t ".profile", default: "Mes articles favoris" %>
               <% end %>
             </li>
             <li>
@@ -70,7 +62,7 @@
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+<!--   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -79,6 +71,6 @@
         <li><a href="#">Other one</a></li>
       </ul>
     </div>
-  </div>
+  </div> -->
 </div>
 

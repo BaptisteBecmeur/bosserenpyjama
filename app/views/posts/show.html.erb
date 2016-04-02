@@ -27,6 +27,26 @@
               <div class="content-part">
                 <p><%= @post.content %></p>
               </div>
+
+
+              <div class="comments-part">
+                <ul class="list-unstyled">
+                  <% @post.comments.each do |comment| %>
+                  <li>
+
+                    <h6><%= image_tag comment.user.picture || "http://api.adorable.io/avatars/300/#{comment.user.email}", class: "user-picture" %> <%= comment.user.first_name %> <%= comment.user.last_name[0] %>. </h6>
+                    <p><%= comment.content %></p>
+                  </li>
+                  <% if comment.user == current_user  %>
+                    <%= link_to post_comment_path(post_id: @post.id, id: comment.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                      <i class="fa fa-trash"></i>
+                    <% end %>
+                  <% end %>
+                  <% end %>
+                </ul>
+                  <%= render 'comments' %>
+              </div>
+
               <div class="text-center buttons-view-post">
                 <% if current_user.try(:admin?) %>
                 <%= link_to "Modifier l'article", edit_post_path(@post), class: "btn btn-default btn-md" %>
