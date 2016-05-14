@@ -8,13 +8,21 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
   </head>
+
   <body>
+
     <%= render 'shared/navbar' %>
+
     <div class="flashes">
       <%= render 'shared/flashes' %>
     </div>
+
     <%= yield %>
+
     <%= render 'shared/footer' %>
+
     <%= javascript_include_tag 'application' %>
+
+
   </body>
 </html>

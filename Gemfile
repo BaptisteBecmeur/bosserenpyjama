@@ -29,6 +29,10 @@ gem 'gibbon'
 # gem 'faker'
 # gem 'faker_extension_fr'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-simplemde'
+end
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
