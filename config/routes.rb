@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :posts do
-    resources :categories
+    #resources :categories
       resources :comments
   end
 
